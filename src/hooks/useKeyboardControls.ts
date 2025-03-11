@@ -9,6 +9,8 @@ export const useKeyboardControls = (
   keyboardMap: KeyboardMap,
   dispatch: React.Dispatch<Action>
 ): void => {
+  React.useEffect(() => {})
+
   React.useEffect(() => {
     const keyboardDispatch = Object.entries(
       keyboardMap
