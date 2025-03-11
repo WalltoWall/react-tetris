@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { JSX } from 'react'
 import PieceView from './PieceView'
 import { Context } from '../context'
 

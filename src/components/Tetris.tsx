@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { JSX } from 'react'
 import Gameboard from './Gameboard'
 import * as Game from '../models/Game'
 import HeldPiece from './HeldPiece'

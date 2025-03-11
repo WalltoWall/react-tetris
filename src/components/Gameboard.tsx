@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { JSX } from 'react'
 import { viewMatrix } from '../models/Game'
 import { getClassName } from '../models/Piece'
 import { Context } from '../context'
