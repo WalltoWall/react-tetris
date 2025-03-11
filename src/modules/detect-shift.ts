@@ -4,25 +4,6 @@ type Callback = () => void
 const callbacks: Callback[] = []
 let isPressed = false
 
-if (document) {
-  document.addEventListener('keydown', (e) => {
-    if (e.shiftKey && !isPressed) {
-      isPressed = e.shiftKey
-      callCallbacks()
-    }
-
-    return true
-  })
-
-  document.addEventListener('keyup', (e) => {
-    if (!e.shiftKey && isPressed) {
-      isPressed = e.shiftKey
-    }
-
-    return true
-  })
-}
-
 function callCallbacks() {
   callbacks.forEach((callback) => {
     callback()
@@ -31,6 +12,25 @@ function callCallbacks() {
 
 export default {
   bind(callback: Callback): void {
+    if (document) {
+      document.addEventListener('keydown', (e) => {
+        if (e.shiftKey && !isPressed) {
+          isPressed = e.shiftKey
+          callCallbacks()
+        }
+
+        return true
+      })
+
+      document.addEventListener('keyup', (e) => {
+        if (!e.shiftKey && isPressed) {
+          isPressed = e.shiftKey
+        }
+
+        return true
+      })
+    }
+
     callbacks.push(callback)
   },
 
