@@ -1,13 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-import GamePanel from './GamePanel';
-import TypedShell from './TypedShell';
+import React from 'react'
+import styled from 'styled-components'
+import GamePanel from './GamePanel'
+import TypedShell from './TypedShell'
 
 const Container = styled.div`
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   font-weight: 300;
   width: 100%;
   position: relative;
@@ -15,7 +15,7 @@ const Container = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-`;
+`
 
 const Header = styled.header`
   display: flex;
@@ -25,7 +25,7 @@ const Header = styled.header`
   background: #fafafa;
   border-bottom: 1px solid #eaeaea;
   padding: 0 18px;
-`;
+`
 
 const VerticallyCenterChildren = styled.div`
   display: flex;
@@ -33,17 +33,17 @@ const VerticallyCenterChildren = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-`;
+`
 
 const Title = styled.h1`
   font-weight: 300;
   color: #000;
-`;
+`
 
 const SubTitle = styled.h2`
   font-weight: 300;
   font-size: 18px;
-`;
+`
 
 const App = (): JSX.Element => (
   <Container>
@@ -56,6 +56,6 @@ const App = (): JSX.Element => (
       <GamePanel />
     </VerticallyCenterChildren>
   </Container>
-);
+)
 
-export default App;
+export default App

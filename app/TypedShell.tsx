@@ -1,10 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const Shell = styled.div`
   display: inline-block;
   margin: 18px 0;
-  font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+  font-family:
+    Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
     'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
     'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
     monospace;
@@ -12,35 +13,35 @@ const Shell = styled.div`
   background: #fff;
   border: 1px solid #eaeaea;
   padding: 12px 18px;
-`;
+`
 
 export default function TypedShell({
   children
 }: {
-  children: string;
+  children: string
 }): JSX.Element {
-  const [lettersToShow, setLettersToShow] = React.useState(0);
+  const [lettersToShow, setLettersToShow] = React.useState(0)
 
   React.useEffect(() => {
-    let id: number | undefined;
+    let id: number | undefined
     const addLetters = () => {
-      const wait = Math.random() * 200 + 40;
+      const wait = Math.random() * 200 + 40
 
       id = setTimeout(() => {
-        setLettersToShow((current) => current + 1);
+        setLettersToShow((current) => current + 1)
 
         if (lettersToShow < children.length) {
-          addLetters();
+          addLetters()
         }
-      }, wait);
-    };
+      }, wait)
+    }
 
-    addLetters();
+    addLetters()
 
     return () => {
-      id && clearTimeout(id);
-    };
-  }, [lettersToShow, setLettersToShow, children]);
+      id && clearTimeout(id)
+    }
+  }, [lettersToShow, setLettersToShow, children])
 
-  return <Shell>$ {children.slice(0, lettersToShow)}</Shell>;
+  return <Shell>$ {children.slice(0, lettersToShow)}</Shell>
 }
